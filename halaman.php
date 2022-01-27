@@ -52,6 +52,58 @@ if (isset($_POST["cari"])) {
   <link rel="stylesheet" href="carbook-master/css/icomoon.css">
   <link rel="stylesheet" href="carbook-master/css/style.css">
 </head>
+<style>
+  /* From cssbuttons.io by @alexmaracinaru */
+  .cta {
+    border: none;
+    background: none;
+  }
+
+  .cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 10px;
+    padding-right: 15px;
+    text-transform: uppercase;
+  }
+
+  .cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+  }
+
+  .cta:hover svg {
+    transform: translateX(0);
+  }
+
+  .cta:active svg {
+    transform: scale(0.9);
+  }
+
+  .hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+  }
+
+  .hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1.5px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+</style>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -136,8 +188,13 @@ if (isset($_POST["cari"])) {
                         <p class="price">$<?= $mbl["harga"]; ?></p>
                       </div>
                       <form action="" method="post">
-                        <p class="d-flex mb-0 d-block"><a href="beli.php?id=<?= $mbl["id"]; ?>" class="btn btn-primary py-2 mr-1">Beli Sekarang</a>
-                          <a name="detail" href="details.php?id=<?= $mbl["id"]; ?>" class="btn btn-secondary py-2 ml-1">Details</a>
+                        <button class="cta">
+                          <span class="hover-underline-animation"> <a style="color:#333;margin-right:50px;" href="beli.php?id=<?= $mbl["id"]; ?>">Beli Sekarang</a> </span>
+                          <svg id="arrow-horizontal" xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                            <path id="Path_10" data-name="Path 10" d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                          </svg>
+                        </button>
+                        <a name="detail" href="details.php?id=<?= $mbl["id"]; ?>" class="btn btn-secondary py-2 ml-1">Details</a>
                         </p>
                       </form>
                     <?php endforeach; ?>
