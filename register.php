@@ -28,6 +28,7 @@ if (isset($_POST["register"])) {
   <link href="colorlib-regform-5/vendor/select2/select2.min.css" rel="stylesheet" media="all">
   <link href="colorlib-regform-5/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
   <link rel="text/css" href="register.css">
+  <link rel="icon" type="image/png" href="img/download.png">
 
 <body>
   <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">

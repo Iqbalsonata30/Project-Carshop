@@ -42,6 +42,7 @@ if (!isset($_GET["id"])) {
   <link rel="stylesheet" href="carbook-master/css/flaticon.css">
   <link rel="stylesheet" href="carbook-master/css/icomoon.css">
   <link rel="stylesheet" href="carbook-master/css/style.css">
+  <link rel="icon" type="image/png" href="img/download.png">
 </head>
 
 <body>
